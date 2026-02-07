@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Reasons to Register a Trade Mark — Yield IP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-green: #2A3B2B; --c-green-mid: #3D5A40; --c-gold: #C7983E;
+  --c-gold-bright: #F7BF52; --c-gold-light: #E4C776; --c-gold-pale: #F2E6C5;
+  --c-cream: #FAF6F0; --c-warm: #F3ECE2; --c-white: #FFFFFF;
+  --c-text: #2C1E13; --c-text-mid: #6B5D52; --c-text-light: #8A7E74;
+  --c-border: #E2D9CE; --c-brown-dark: #2C1E13; --c-sage: #7A9B8A;
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'DM Sans', sans-serif;
+  --f-mono: 'DM Mono', monospace;
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-5: 1.25rem; --s-6: 1.5rem; --s-8: 2rem; --s-10: 2.5rem;
+  --s-12: 3rem; --s-16: 4rem; --s-20: 5rem; --s-24: 6rem;
+  --section-x: 3.5rem;
+  --r-card: 14px; --r-pill: 100px; --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1220px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--f-body); color: var(--c-text); background: var(--c-cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.022; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.07s; } .reveal-d2 { transition-delay: 0.14s; }
+.reveal-d3 { transition-delay: 0.21s; }
+
+/* NAV (same as main) */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: var(--s-3) var(--section-x); display: flex; align-items: center; justify-content: space-between; background: rgba(250,246,240,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--c-border); transition: padding 0.4s ease, box-shadow 0.4s ease; }
+.nav.scrolled { padding-top: var(--s-2); padding-bottom: var(--s-2); box-shadow: 0 2px 20px rgba(44,30,19,0.06); }
+.nav-logo { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; }
+.nav-logo-icon { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: var(--c-warm); border: 1.5px solid var(--c-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.nav-logo-icon svg { width: 36px; height: 36px; }
+.nav-logo-text { font-family: var(--f-display); font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; color: var(--c-green); }
+.nav-logo-text span { color: var(--c-gold); }
+.nav-links { display: flex; align-items: center; gap: var(--s-10); list-style: none; }
+.nav-links a { text-decoration: none; color: var(--c-text); font-size: 0.92rem; font-weight: 400; transition: color 0.3s ease; }
+.nav-links a:hover { color: var(--c-gold); }
+.nav-cta { background: var(--c-green) !important; color: #fff !important; padding: 0.6rem 1.5rem !important; border-radius: var(--r-pill) !important; font-size: 0.78rem !important; font-weight: 500 !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; transition: background 0.3s ease !important; }
+.nav-cta:hover { background: var(--c-green-mid) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 26px; height: 18px; position: relative; z-index: 1002; }
+.nav-toggle span { display: block; width: 100%; height: 2px; background: var(--c-green); position: absolute; left: 0; transition: all 0.35s ease; border-radius: 1px; }
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle span:nth-child(3) { bottom: 0; }
+.nav-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { bottom: auto; top: 50%; transform: translateY(-50%) rotate(-45deg); }
+.nav-links.open { display: flex !important; flex-direction: column; position: fixed; inset: 0; background: var(--c-white); justify-content: center; align-items: center; gap: var(--s-8); z-index: 1001; }
+.nav-links.open a { font-size: 1.15rem; color: var(--c-green); font-weight: 500; }
+.nav-links.open .nav-cta { margin-top: var(--s-4); padding: 0.75rem 2rem !important; font-size: 0.82rem !important; }
+
+/* ARTICLE HERO */
+.article-hero {
+  padding: 8rem var(--section-x) var(--s-16);
+  background: var(--c-cream);
+  max-width: 820px;
+  margin: 0 auto;
+}
+.article-back {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-family: var(--f-mono); font-size: 0.72rem; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--c-text-light); text-decoration: none;
+  margin-bottom: var(--s-8);
+  transition: color 0.3s ease;
+}
+.article-back:hover { color: var(--c-gold); }
+.article-back svg { width: 14px; height: 14px; }
+
+.article-meta {
+  display: flex; align-items: center; gap: var(--s-4);
+  margin-bottom: var(--s-6);
+}
+.article-tag {
+  font-family: var(--f-mono); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--c-green); background: rgba(42,59,43,0.08);
+  padding: 0.3rem 0.75rem; border-radius: var(--r-pill);
+}
+.article-date {
+  font-family: var(--f-mono); font-size: 0.72rem;
+  color: var(--c-text-light);
+}
+.article-hero h1 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: 400; line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--c-green);
+  margin-bottom: var(--s-6);
+}
+.article-intro {
+  font-size: 1.1rem; line-height: 1.8;
+  color: var(--c-text-mid);
+  max-width: 680px;
+}
+
+/* ARTICLE IMAGE */
+.article-img {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto var(--s-16);
+  padding: 0 var(--section-x);
+}
+.article-img-inner {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  background: var(--c-warm);
+  border-radius: var(--r-card);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.article-img-inner img { width: 100%; height: 100%; object-fit: cover; }
+.illus-tm-lg { position: relative; width: 200px; height: 200px; }
+.illus-tm-lg .ring-o { position: absolute; inset: 0; border-radius: 50%; border: 4px solid transparent; border-top-color: var(--c-gold); border-right-color: var(--c-gold); border-bottom-color: var(--c-gold); transform: rotate(-50deg); }
+.illus-tm-lg .ring-i { position: absolute; inset: 12px; border-radius: 50%; border: 2.5px solid var(--c-border); }
+.illus-tm-lg .tm-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-body); font-size: 3.4rem; font-weight: 500; color: var(--c-green); letter-spacing: 0.08em; }
+
+/* ARTICLE BODY */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--section-x) var(--s-16);
+}
+.article-body h2 {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--c-green);
+  margin: var(--s-12) 0 var(--s-5);
+}
+.article-body h2:first-child { margin-top: 0; }
+.article-body h2 .num {
+  font-family: var(--f-display);
+  font-style: italic;
+  color: var(--c-gold);
+  margin-right: var(--s-2);
+}
+.article-body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--c-text-mid);
+  margin-bottom: var(--s-6);
+}
+.article-body p strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+.article-body .note {
+  background: var(--c-warm);
+  border-left: 3px solid var(--c-gold);
+  border-radius: 0 var(--r-input) var(--r-input) 0;
+  padding: var(--s-6);
+  margin: var(--s-8) 0;
+}
+.article-body .note p { margin-bottom: 0; font-size: 0.95rem; }
+
+.article-body ol {
+  padding-left: var(--s-6);
+  margin-bottom: var(--s-6);
+}
+.article-body ol li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--c-text-mid);
+  margin-bottom: var(--s-3);
+}
+
+/* DIVIDER */
+.article-divider {
+  width: 60px; height: 2px;
+  background: var(--c-gold);
+  margin: var(--s-12) auto;
+  opacity: 0.4;
+}
+
+/* CTA BLOCK */
+.article-cta {
+  max-width: 720px;
+  margin: 0 auto var(--s-16);
+  padding: 0 var(--section-x);
+}
+.article-cta-inner {
+  background: var(--c-green);
+  border-radius: 16px;
+  padding: var(--s-12) var(--s-10);
+  text-align: center;
+}
+.article-cta-inner h3 {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: var(--s-4);
+}
+.article-cta-inner h3 em { font-style: italic; color: var(--c-gold); }
+.article-cta-inner p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: var(--s-8);
+  max-width: 480px;
+  margin-left: auto; margin-right: auto;
+}
+.article-cta-inner a {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  padding: 0.9rem 2rem;
+  background: var(--c-gold-bright);
+  color: var(--c-brown-dark);
+  font-family: var(--f-body); font-size: 0.82rem;
+  font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: var(--r-pill);
+  transition: all 0.4s var(--ease);
+}
+.article-cta-inner a:hover { background: #f9cb6e; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(247,191,82,0.3); }
+
+/* RELATED ARTICLES */
+.related {
+  padding: var(--s-16) var(--section-x) var(--s-20);
+  background: var(--c-warm);
+}
+.related-inner { max-width: var(--container); margin: 0 auto; }
+.related .section-label {
+  font-family: var(--f-mono); font-size: 0.72rem; font-weight: 400;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--c-text-light); margin-bottom: var(--s-3);
+}
+.related h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 400; color: var(--c-green);
+  margin-bottom: var(--s-10);
+}
+.related h2 em { font-style: italic; color: var(--c-gold); }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-4);
+}
+.related-card {
+  background: var(--c-white);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.03);
+  display: flex; flex-direction: column;
+  transition: all 0.4s var(--ease);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.related-card:hover { transform: translateY(-4px); box-shadow: 0 12px 34px rgba(44,30,19,0.07); }
+.related-card-img {
+  height: 160px;
+  background: var(--c-cream);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.related-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.related-card-body { padding: var(--s-6); }
+.related-card-body h3 {
+  font-family: var(--f-display);
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--c-green); line-height: 1.35;
+  margin-bottom: var(--s-2);
+  transition: color 0.3s ease;
+}
+.related-card:hover h3 { color: var(--c-gold); }
+.related-card-body p {
+  font-size: 0.84rem; line-height: 1.65;
+  color: var(--c-text-mid);
+}
+
+/* FOOTER */
+footer { background: var(--c-brown-dark); padding: var(--s-10) var(--section-x); text-align: center; }
+.footer-logo { font-family: var(--f-display); font-size: 1.2rem; font-weight: 600; color: var(--c-cream); margin-bottom: var(--s-2); }
+.footer-logo span { color: var(--c-gold); }
+footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  :root { --section-x: 2rem; }
+}
+@media (max-width: 768px) {
+  :root { --section-x: 1.25rem; }
+  .nav { padding: 0.7rem var(--section-x); }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .article-hero { padding: 6.5rem var(--section-x) var(--s-10); }
+  .article-hero h1 { font-size: 1.85rem; }
+  .article-body h2 { font-size: 1.25rem; margin-top: var(--s-8); }
+  .related-grid { grid-template-columns: 1fr; }
+  .article-cta-inner { padding: var(--s-8) var(--s-6); }
+  footer { padding: var(--s-8) var(--section-x); }
+}
+@media (max-width: 480px) {
+  .nav-logo-text { font-size: 1.2rem; }
+  .article-hero h1 { font-size: 1.65rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <a href="yield-ip.html" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="18" stroke="#C7983E" stroke-width="1.2" fill="none"/><path d="M21 10c0 0-3 5-3 11s3 11 3 11 3-5 3-11-3-11-3-11z" fill="#2A3B2B" opacity="0.8"/><path d="M17 14c0 0 2 3 4 6" stroke="#C7983E" stroke-width="0.9" fill="none" stroke-linecap="round"/><path d="M25 14c0 0-2 3-4 6" stroke="#C7983E" stroke-width="0.9" fill="none" stroke-linecap="round"/></svg></div>
+    <div class="nav-logo-text">YIELD <span>IP</span></div>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="yield-ip.html#about">About</a></li>
+    <li><a href="yield-ip.html#mission">Mission</a></li>
+    <li><a href="yield-ip.html#expertise">Expertise</a></li>
+    <li><a href="yield-ip.html#insights">Insights</a></li>
+    <li><a href="yield-ip.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <a href="yield-ip.html#insights" class="article-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    Back to Insights
+  </a>
+  <div class="article-meta">
+    <span class="article-tag">Guide</span>
+    <span class="article-date">Yield IP</span>
+  </div>
+  <h1>7 Reasons to Register a Trade Mark</h1>
+  <p class="article-intro">Registering a trade mark is one of the most strategic decisions a brand owner can make. Here are seven compelling reasons why securing your mark should be a priority.</p>
+</div>
+
+<!-- ARTICLE IMAGE -->
+<div class="article-img">
+  <div class="article-img-inner">
+    <!-- PLACEHOLDER: Replace with exported image -->
+    <div class="illus-tm-lg"><div class="ring-o"></div><div class="ring-i"></div><div class="tm-t">TM</div></div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <h2><span class="num">1.</span> Registered trade mark as a sword</h2>
+  <p>A trade mark registration allows you as the brand owner to stop others from using the same or similar mark that potentially causes consumer confusion.</p>
+  <p>It gives you the exclusive right to use the trade mark, as well as to authorize other persons to use the trade mark, in relation to the goods and/or services for which the trade mark is registered.</p>
+
+  <h2><span class="num">2.</span> Registered trade mark as a shield</h2>
+  <p>Owning trade mark rights over your brands also prevent others from usurping or freeriding on your goodwill, and from damaging your reputation by associating your brand with an inferior product.</p>
+
+  <h2><span class="num">3.</span> Registered trade mark offers a partial freedom-to-operate</h2>
+  <p>Pursuant to Section 28(3) of the Trade Marks Act, <strong>"a registered trade mark is not infringed by the use of another registered trade mark in relation to goods or services for which the latter is registered"</strong>. This means that you cannot be alleged of infringing an earlier registered mark existing on the Singapore register, even if your trade mark is successfully registered later. A trade mark registration in Singapore therefore accords a partial freedom-to-operate.</p>
+
+  <h2><span class="num">4.</span> Streamlined infringement action is possible</h2>
+  <p>This point is related to using your trade mark as a sword. Obtaining a trade mark registration would grant you a statutory monopoly. This means that if someone else uses the same/similar mark on the same/similar goods and/or services, then you can rely on your registration as proof of your right to the mark and sue the other party for trade mark infringement.</p>
+  <p>The "infringement" process is more streamlined compared to the common law action of "passing off" which may pose some additional hurdles due to the requirement of proving reputation and goodwill.</p>
+
+  <h2><span class="num">5.</span> Perpetual protection is possible</h2>
+  <p>Trade mark registrations can be renewed every 10 years, enabling perpetual protection so long as the rights are duly renewed.</p>
+  <p>This is unlike other intellectual property rights such as patents (lasts a total of 20 years only, subject to payment of annuities yearly), registered designs (lasts a total of 15 years only, subject to payment of renewal fees every 5 years) and copyright (duration depends on the category of copyright works).</p>
+
+  <div class="note">
+    <p><strong>Important:</strong> Such perpetual rights remain subject to actual use of your trade mark in association with the goods and/or services it is registered for. Under Section 22 of the Trade Marks Act, any person may apply to revoke a registered trade mark on either of the following grounds:</p>
+  </div>
+
+  <ol>
+    <li>The mark has not been put to genuine use by the proprietor or with his consent for a five-year period following completion of the registration procedure and there are no proper reasons for non-use; or</li>
+    <li>Genuine use has been suspended for an uninterrupted period of five years and there are no proper reasons for non-use.</li>
+  </ol>
+
+  <p>It is therefore pertinent to ensure that your trade mark is used in the form that it is registered, to avoid removal of the mark from the Register on the basis of non-use and continue to reap the benefits of perpetual protection.</p>
+
+  <h2><span class="num">6.</span> Commercialization of trade mark rights</h2>
+  <p>Registered trade marks can also be licensed for commercial use by other third parties for negotiated royalties, thereby creating another stream of revenue. This is often done via licensing or franchising agreements.</p>
+
+  <h2><span class="num">7.</span> Registered trade marks create and strengthen brand value</h2>
+  <p>Trade marks create brand value — they potentially help you build and improve your brand image and identity, functioning as distinctive badges of origin of your goods and services, while also assuring consumers of the high quality of your products and services. They work in tandem with other marketing efforts, to distinguish and set you apart from your competitors.</p>
+
+</div>
+
+<div class="article-divider"></div>
+
+<!-- CTA -->
+<div class="article-cta">
+  <div class="article-cta-inner">
+    <h3>Ready to protect your <em>brand?</em></h3>
+    <p>Registering a trade mark comes with many benefits and they are valuable assets to companies. It is prudent to engage the services of IP professionals to assist you.</p>
+    <a href="yield-ip.html#contact">Get in Touch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<!-- RELATED ARTICLES -->
+<section class="related">
+  <div class="related-inner">
+    <div class="section-label reveal">More from Yield IP</div>
+    <h2 class="reveal reveal-d1">Continue <em>reading</em></h2>
+    <div class="related-grid" id="relatedGrid">
+      <!-- Populated by JS in random order -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yield <span>IP</span></div>
+  <p>&copy; 2026 Yield IP Pte. Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+
+// Mobile toggle
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+function toggleNav() { links.classList.toggle('open'); toggle.classList.toggle('open'); document.body.style.overflow = links.classList.contains('open') ? 'hidden' : ''; }
+toggle.addEventListener('click', toggleNav);
+document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { if (links.classList.contains('open')) toggleNav(); }); });
+
+// Scroll reveal
+const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Related articles — loaded in random order
+const articles = [
+  {
+    title: "Trade Mark Filing Strategy: Word Mark, Logo Mark or Composite Mark?",
+    excerpt: "For optimal brand protection, register three separate trade marks — word mark, logo mark, and composite mark — or at minimum the word and logo marks separately.",
+    href: "#",
+    illus: '<div style="display:flex;align-items:center;gap:0.8rem;padding:0 1.2rem;"><span style="font-family:DM Sans;font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E74;">STARBUCKS</span><span style="width:36px;height:36px;border-radius:50%;background:#8A7E74;opacity:0.18;"></span><span style="width:36px;height:36px;border-radius:50%;background:#8A7E74;opacity:0.18;"></span></div>'
+  },
+  {
+    title: "Be Your Own Dentist - Yay or Nay?",
+    excerpt: "While filing online through IPOS is straightforward, engaging an IP professional remains crucial to avoid costly objections and oppositions down the line.",
+    href: "#",
+    illus: '<div style="display:flex;align-items:center;gap:0.5rem;"><svg viewBox="0 0 36 36" width="34" height="34"><circle cx="18" cy="18" r="14" fill="#C7983E" opacity="0.12"/><polyline points="12,18 16,22 24,14" stroke="#C7983E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 36 36" width="34" height="34"><circle cx="18" cy="18" r="14" fill="#8A7E74" opacity="0.1"/><line x1="13" y1="13" x2="23" y2="23" stroke="#8A7E74" stroke-width="2.5" stroke-linecap="round"/><line x1="23" y1="13" x2="13" y2="23" stroke="#8A7E74" stroke-width="2.5" stroke-linecap="round"/></svg><svg viewBox="0 0 36 36" width="34" height="34"><circle cx="18" cy="18" r="14" fill="#C7983E" opacity="0.08"/><text x="18" y="24" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" font-weight="500" fill="#B5A998">?</text></svg></div>'
+  },
+  {
+    title: "2026 Madrid Protocol Changes: What Brand Owners Need to Know",
+    excerpt: "Key updates to the Madrid Protocol that affect international trademark filing strategies and portfolio management across jurisdictions.",
+    href: "#",
+    illus: '<div style="font-family:DM Mono,monospace;font-size:1.4rem;color:#C7983E;opacity:0.5;letter-spacing:0.05em;">MP 2026</div>'
+  },
+  {
+    title: "ASEAN Trademark Landscape: Filing Strategies for Southeast Asia",
+    excerpt: "Navigate the complexities of trademark protection across ASEAN member states with strategic filing approaches tailored to the region.",
+    href: "#",
+    illus: '<div style="font-family:DM Mono,monospace;font-size:1.4rem;color:#7A9B8A;opacity:0.5;letter-spacing:0.05em;">ASEAN</div>'
+  }
+];
+
+// Shuffle and render
+function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+const grid = document.getElementById('relatedGrid');
+shuffle(articles).forEach((a, i) => {
+  const card = document.createElement('a');
+  card.href = a.href;
+  card.className = 'related-card reveal' + (i > 0 ? ' reveal-d' + i : '');
+  card.innerHTML = `<div class="related-card-img">${a.illus}</div><div class="related-card-body"><h3>${a.title}</h3><p>${a.excerpt}</p></div>`;
+  grid.appendChild(card);
+});
+
+// Re-observe new reveals
+document.querySelectorAll('.related-card.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
