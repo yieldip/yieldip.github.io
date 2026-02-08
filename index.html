@@ -83,6 +83,7 @@ section { padding: var(--section-y) var(--section-x); }
 .nav-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { bottom: auto; top: 50%; transform: translateY(-50%) rotate(-45deg); }
+.nav-toggle.open { position: fixed; top: 0.75rem; right: 1.25rem; z-index: 10000; }
 
 /* HERO */
 /* .hero { padding-bottom:0; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--c-green); } */
@@ -206,12 +207,15 @@ section { padding: var(--section-y) var(--section-x); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: #B5A998; }
 .form-submit { width: 100%; padding: 0.95rem; background: var(--c-green); color: #fff; font-family: var(--f-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 11px; cursor: pointer; transition: all 0.4s var(--ease); margin-top: var(--s-1); }
 .form-submit:hover { background: var(--c-green-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(42,59,43,0.2); }
+.snackbar { position: fixed; bottom: -60px; left: 50%; transform: translateX(-50%); background: var(--c-green); color: #fff; font-family: var(--f-body); font-size: 0.9rem; padding: 0.9rem 1.8rem; border-radius: var(--r-pill); box-shadow: 0 8px 30px rgba(0,0,0,0.15); z-index: 10000; transition: bottom 0.5s var(--ease); white-space: nowrap; }
+.snackbar.show { bottom: 2rem; }
 
 /* FOOTER */
 footer { background: var(--c-brown-dark); padding: var(--s-10) var(--section-x); text-align: center; }
-.footer-logo { font-family: var(--f-display); font-size: 1.2rem; font-weight: 600; color: var(--c-cream); margin-bottom: var(--s-2); }
+.footer-logo { margin-bottom: var(--s-4); display: flex; justify-content: center; }
 .footer-logo span { color: var(--c-gold); }
 footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
+
 
 /* MOBILE NAV OVERLAY */
 .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--c-white); justify-content: center; align-items: center; gap: var(--s-8); z-index: 9998; }
@@ -394,20 +398,61 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
         <h3 class="reveal reveal-d3">Based in Singapore</h3>
         <p class="reveal reveal-d3">Yield IP Pte. Ltd. serves clients globally with a network of trusted associates across multiple jurisdictions.</p>
       </div>
-      <form class="contact-form reveal reveal-d2" onsubmit="handleSubmit(event)">
-        <div class="form-row"><div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" placeholder="John" required></div><div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" placeholder="Doe" required></div></div>
-        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="john@company.com" required></div>
-        <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" placeholder="Your Company"></div>
-        <div class="form-group"><label for="service">Service of Interest</label><select id="service"><option value="" disabled selected>Select a service</option><option>Pre-Filing Searches</option><option>Trademark &amp; Design Filing</option><option>Examination &amp; Refusals</option><option>Registration</option><option>Post-Registration Recordals</option><option>Watch Services</option><option>Enforcement &amp; Opposition</option><option>Portfolio Advisory</option><option>IP Due Diligence</option><option>Other / General Inquiry</option></select></div>
-        <div class="form-group"><label for="message">Your Message</label><textarea id="message" placeholder="Tell us about your trademark needs..."></textarea></div>
+      <form class="contact-form reveal reveal-d2"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScMDvABiHF0w8nQo7U9MOuAJs25ZUHTICmkjEvzZoR1ue-H7g/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="entry.559885826" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="entry.2129925112" placeholder="Doe" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="entry.2021414221" placeholder="john@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="entry.1682581518" placeholder="Your Company">
+        </div>
+        <div class="form-group">
+          <label for="service">Service of Interest *</label>
+          <select id="service" name="entry.1514591211" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Pre-filling searches">Pre-Filing Searches</option>
+            <option value="Trademark &amp; Design Filing">Trademark &amp; Design Filing</option>
+            <option value="Examination &amp; Refusals">Examination &amp; Refusals</option>
+            <option value="Registration">Registration</option>
+            <option value="Post-Registration Recordals">Post-Registration Recordals</option>
+            <option value="Watch Services">Watch Services</option>
+            <option value="Enforcement &amp; Opposition">Enforcement &amp; Opposition</option>
+            <option value="Portfolio Advisory">Portfolio Advisory</option>
+            <option value="IP Due Diligence">IP Due Diligence</option>
+            <option value="Other / General Inquiry">Other / General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" name="entry.326191174" placeholder="Tell us about your trademark needs..." required></textarea>
+        </div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Yield <span>IP</span></div>
+  <div class="footer-logo"><img src="logo-footer.svg" alt="Yield IP" style="height: 44px; width: auto;"></div>
   <p>&copy; 2026 Yield IP Pte. Ltd. All rights reserved.</p>
 </footer>
 
@@ -421,7 +466,17 @@ const links = document.getElementById('navLinks');
 function toggleNav() { links.classList.toggle('open'); toggle.classList.toggle('open'); document.body.style.overflow = links.classList.contains('open') ? 'hidden' : ''; }
 toggle.addEventListener('click', toggleNav);
 document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { if (links.classList.contains('open')) toggleNav(); }); });
-function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('.form-submit'); btn.textContent = 'Message Sent ✓'; btn.style.background = 'var(--c-gold)'; btn.style.color = 'var(--c-brown-dark)'; setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000); }
+function handleSubmit(e) {
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  const snackbar = document.getElementById('snackbar');
+  setTimeout(() => {
+    btn.textContent = 'Send Message';
+    e.target.reset();
+    snackbar.classList.add('show');
+    setTimeout(() => { snackbar.classList.remove('show'); }, 4000);
+  }, 1000);
+}
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 
 const heroAnim = lottie.loadAnimation({
@@ -433,6 +488,6 @@ const heroAnim = lottie.loadAnimation({
 });
 setTimeout(() => { heroAnim.play(); }, 3000);
 </script>
-
+<div class="snackbar" id="snackbar">Message sent successfully — we'll be in touch within 24 hours.</div>
 </body>
 </html>
