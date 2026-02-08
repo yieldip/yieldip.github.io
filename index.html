@@ -113,11 +113,14 @@ section { padding: var(--section-y) var(--section-x); }
 .about-quote p { font-family: var(--f-display); font-size: 1.05rem; font-style: italic; font-weight: 400; line-height: 1.65; color: var(--c-green); margin-bottom: 0 !important; }
 .about-quote .qm-end { font-family: var(--f-display); font-size: 1.5rem; font-weight: 600; color: var(--c-gold); margin-left: 0.15rem; }
 .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
-.about-card { background: var(--c-white); border-radius: var(--r-card); padding: var(--s-6) var(--s-5) var(--s-5); border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; transition: all 0.4s var(--ease); }
+.about-card { background: var(--c-white); border-radius: var(--r-card); padding: var(--s-6) var(--s-5) 0; border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; transition: all 0.4s var(--ease); overflow: hidden; }
+/* .about-card { background: var(--c-white); border-radius: var(--r-card); padding: var(--s-6) var(--s-5) var(--s-5); border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; transition: all 0.4s var(--ease); } */
+.about-card:last-child .about-card-illus { margin-left: calc(var(--s-5) * -1); margin-right: calc(var(--s-5) * -1); width: calc(100% + var(--s-5) * 2); }
 .about-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(44,30,19,0.06); }
-.about-card h4 { font-family: var(--f-body); font-size: 0.92rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); }
+.about-card h4 { font-family: var(--f-display); font-size: 0.92rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); }
 .about-card > p { font-size: 0.85rem; line-height: 1.6; color: var(--c-text-mid); flex-grow: 1; }
-.about-card-illus { width: 100%; height: 68px; margin-top: var(--s-4); display: flex; align-items: center; justify-content: center; }
+.about-card-illus { width: 100%; margin-top: var(--s-4); display: flex; align-items: flex-end; justify-content: center; }
+/* .about-card-illus { width: 100%; height: 68px; margin-top: var(--s-4); display: flex; align-items: center; justify-content: center; } */
 .illus-focus { display: flex; align-items: flex-end; gap: 2px; }
 .illus-focus .dot { border-radius: 50%; }
 .illus-focus .d1 { width: 40px; height: 40px; background: var(--c-gold); opacity: 0.75; }
@@ -139,7 +142,7 @@ section { padding: var(--section-y) var(--section-x); }
 .mission-value { text-align: center; }
 .mission-value-icon { width: 60px; height: 60px; margin: 0 auto var(--s-5); display: flex; align-items: center; justify-content: center; }
 .mission-value-icon svg { width: 54px; height: 54px; }
-.mission-value h4 { font-family: var(--f-body); font-size: 0.92rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); }
+.mission-value h4 { font-family: var(--f-display); font-size: 0.92rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); }
 .mission-value p { font-size: 0.86rem; line-height: 1.6; color: var(--c-text-mid); max-width: 250px; margin: 0 auto; }
 
 /* EXPERTISE */
@@ -150,7 +153,7 @@ section { padding: var(--section-y) var(--section-x); }
 .service-card { background: var(--c-white); border-radius: var(--r-card); padding: var(--s-8) var(--s-6) var(--s-6); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.03); transition: all 0.4s var(--ease); }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 34px rgba(44,30,19,0.07); }
 .service-num { position: absolute; top: 0.5rem; right: 0.9rem; font-family: var(--f-display); font-size: 3.6rem; font-weight: 400; font-style: italic; color: var(--c-border); line-height: 1; opacity: 0.5; user-select: none; }
-.service-card h3 { font-family: var(--f-body); font-size: 0.95rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); position: relative; z-index: 1; }
+.service-card h3 { font-family: var(--f-display); font-size: 0.95rem; font-weight: 600; color: var(--c-green); margin-bottom: var(--s-2); position: relative; z-index: 1; }
 .service-card p { font-size: 0.86rem; line-height: 1.65; color: var(--c-text-mid); position: relative; z-index: 1; }
 
 /* INSIGHTS */
@@ -304,10 +307,10 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
         <div class="about-quote reveal reveal-d3"><span class="qm">&ldquo;</span><p><em>Our name embodies a dual essence — surrendering all we do to God, while yielding fruitful, impactful results for our clients.</em><span class="qm-end"> &rdquo;</span></p></div>
       </div>
       <div class="about-cards">
-        <div class="about-card reveal reveal-d1"><h4>Dedicated Focus</h4><p>Exclusively focused on trademark and design IP solutions for optimal results.</p><div class="about-card-illus"><div class="illus-focus"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div></div></div>
-        <div class="about-card reveal reveal-d2"><h4>Global Network</h4><p>Worldwide associates enabling comprehensive portfolio management.</p><div class="about-card-illus"><div class="illus-network"><svg viewBox="0 0 100 60" fill="none"><ellipse cx="50" cy="30" rx="42" ry="26" stroke="#C7983E" stroke-width="0.9" opacity="0.5"/><ellipse cx="50" cy="30" rx="20" ry="26" stroke="#C7983E" stroke-width="0.8" opacity="0.4"/><line x1="8" y1="30" x2="92" y2="30" stroke="#C7983E" stroke-width="0.6" opacity="0.3"/><ellipse cx="50" cy="30" rx="42" ry="11" stroke="#C7983E" stroke-width="0.6" opacity="0.25"/></svg></div></div></div>
-        <div class="about-card reveal reveal-d3"><h4>Excellence Driven</h4><p>Committed to simplifying the complexities of intellectual property protection.</p><div class="about-card-illus"><div class="illus-excellence"><svg viewBox="0 0 30 30"><path d="M15 3l3.2 7.8 8.8 1.2-6.5 5.2 2 8.8L15 22l-7.5 4 2-8.8L3 12l8.8-1.2z" fill="#7A9B8A" opacity="0.4"/></svg><svg viewBox="0 0 30 30"><path d="M15 3l3.2 7.8 8.8 1.2-6.5 5.2 2 8.8L15 22l-7.5 4 2-8.8L3 12l8.8-1.2z" fill="#C7983E" opacity="0.85"/></svg><svg viewBox="0 0 30 30"><path d="M15 3l3.2 7.8 8.8 1.2-6.5 5.2 2 8.8L15 22l-7.5 4 2-8.8L3 12l8.8-1.2z" fill="#7A9B8A" opacity="0.3"/></svg></div></div></div>
-        <div class="about-card reveal reveal-d4"><h4>MNC &amp; SME Partners</h4><p>Serving multinational corporations and small-to-medium enterprises alike.</p><div class="about-card-illus"><div class="illus-partners"><div class="tri"></div><div class="semi"></div></div></div></div>
+        <div class="about-card reveal reveal-d1"><h4>Dedicated Focus</h4><p>Exclusively focused on trademark and design IP solutions for optimal results.</p><div class="about-card-illus"><div class="illus-focus"><img src="illus-focus.svg"></div></div></div>
+        <div class="about-card reveal reveal-d2"><h4>Global Network</h4><p>Worldwide associates enabling comprehensive portfolio management.</p><div class="about-card-illus"><div class="illus-network"><img src="illus-network.svg"></div></div></div>
+        <div class="about-card reveal reveal-d3"><h4>Excellence Driven</h4><p>Committed to simplifying the complexities of intellectual property protection.</p><div class="about-card-illus"><div class="illus-excellence"><img src="illus-excellence.svg"></div></div></div>
+        <div class="about-card reveal reveal-d4"><h4>MNC &amp; SME Partners</h4><p>Serving multinational corporations and small-to-medium enterprises alike.</p><div class="about-card-illus"><div class="illus-partners"><img src="illus-partners.svg"></div></div></div>
       </div>
     </div>
   </div>
@@ -415,13 +418,14 @@ document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('clic
 function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('.form-submit'); btn.textContent = 'Message Sent ✓'; btn.style.background = 'var(--c-gold)'; btn.style.color = 'var(--c-brown-dark)'; setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000); }
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 
-lottie.loadAnimation({
+const heroAnim = lottie.loadAnimation({
   container: document.getElementById('heroLottie'),
   renderer: 'svg',
   loop: true,
-  autoplay: true,
+  autoplay: false,
   path: 'yield-hero.json'
 });
+setTimeout(() => { heroAnim.play(); }, 4000);
 </script>
 
 </body>
