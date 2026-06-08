@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Yield IP LLP is a Singapore trademark consultancy delivering high-yield strategies for trademark registration, renewal, opposition, and global portfolio management.">
+<title>Yield IP — Trademark Consultancy Singapore</title>
+
+<link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          /* Design tokens — botanical mood */
+          'forest':      '#303D2F',
+          'forest-text': '#2C3E2D',
+          'gold':        '#C79841',
+          'gold-bright': '#F6C053',
+          'cream':       '#FBF9F5',
+          'warm-muted':  '#6C5E53',
+          'card-edge':   '#EEEEE5',
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'Georgia', 'serif'],
+          body:    ['"DM Sans"', 'system-ui', 'sans-serif'],
+          ui:      ['"Inter"', 'system-ui', 'sans-serif'],
+        },
+        fontSize: {
+          /* ShadCN-aligned scale, extended for display sizes */
+          'display-xl': ['5rem',   { lineHeight: '1.15', letterSpacing: '-0.02em' }], /* 80px */
+          'display-lg': ['3.5rem', { lineHeight: '1.18', letterSpacing: '-0.015em' }], /* 56px */
+          'display-sm': ['1.5rem', { lineHeight: '1.3'  }], /* 24px */
+        },
+        borderRadius: {
+          'card': '1.5rem', /* 24px */
+          'pill': '6.25rem', /* 100px */
+        },
+        spacing: {
+          /* ShadCN uses 4px base unit; named slots for primary layout gutters */
+          'gutter':    '3.75rem', /* 60px — primary horizontal padding */
+          'section-y': '5rem',    /* 80px — section top/bottom padding */
+        },
+      }
+    }
+  }
+</script>
+
+<!-- ShadCN-compatible CSS variables + global resets -->
+<style>
+  :root {
+    /* ShadCN semantic tokens mapped to Yield IP design */
+    --background:         250 249 245;   /* cream #FBF9F5 */
+    --foreground:         44  62  45;    /* forest-text #2C3E2D */
+    --card:               255 255 255;
+    --card-foreground:    44  62  45;
+    --primary:            199 152  65;   /* gold #C79841 */
+    --primary-foreground: 255 255 255;
+    --secondary:          48  61  47;    /* forest #303D2F */
+    --secondary-foreground: 255 255 255;
+    --muted:              238 238 229;   /* card-edge #EEEEE5 */
+    --muted-foreground:   108  94  83;   /* warm-muted #6C5E53 */
+    --border:             238 238 229;
+    --ring:               199 152  65;
+    --radius:             0.5rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { -webkit-font-smoothing: antialiased; }
+  img  { display: block; max-width: 100%; }
+  a    { text-decoration: none; color: inherit; }
+</style>
+</head>
+
+<body class="bg-cream font-body text-forest-text antialiased">
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO (Nav + headline + photo)
+     1440 × 800 px
+═══════════════════════════════════════════════ -->
+<section
+  id="hero"
+  class="relative w-full overflow-hidden bg-forest"
+  style="height: 800px;"
+>
+
+  <!-- Background photo — right half -->
+  <!-- Replace src with your own high-quality photo asset -->
+  <img
+    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1440&q=85&fit=crop&crop=right"
+    alt=""
+    aria-hidden="true"
+    class="absolute top-0 right-0 h-full object-cover object-center pointer-events-none"
+    style="width: 55%;"
+  >
+
+  <!-- Gradient: blends dark forest bg into photo -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: linear-gradient(to right, #303D2F 36%, #303D2Fcc 50%, #303D2F66 62%, transparent 76%);"
+  ></div>
+
+  <!-- ─── Navbar ─── -->
+  <nav
+    class="absolute flex items-center"
+    style="top: 30px; left: 60px; right: 60px;"
+    aria-label="Primary navigation"
+  >
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Yield IP home">
+      <!-- Inline logo SVG — exact from design -->
+      <svg width="34" height="40" viewBox="0 0 33.6 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M33.612 7.4V18.2C33.612 31.16 22.279 37.867 16.612 40 2.688 33.76-0.253 22.867 0.017 18.2V7.2L16.814 0 33.612 7.4ZM3.916 15.161C3.744 17.728 4.456 23.16 8.683 24.354 10.445 24.826 14.34 26.656 15.834 30.208V24.551C15.715 23.241 14.57 20.292 10.948 18.972 7.325 17.652 4.75 15.882 3.916 15.161Z" fill="#FFFFFF"/>
+        <path d="M15.943 21.566V24.957C16.221 20.629 19.433 18.579 21.898 17.814 22.912 17.499 23.991 17.338 24.896 16.787 27.828 15.002 29.396 11.544 29.847 9.832 28.717 11.597 25.567 12.446 23.162 12.781 21.937 12.952 20.648 13.008 19.605 13.666 16.787 15.446 15.973 19.48 15.943 21.566Z" fill="#C7983E"/>
+      </svg>
+      <!-- Logotype -->
+      <span
+        class="font-display font-semibold tracking-tight"
+        style="font-size: 1.4rem; color: #ffffff; letter-spacing: -0.01em;"
+      >Yield<span style="color: #C79841;">IP</span></span>
+    </a>
+
+    <!-- Nav links -->
+    <ul
+      class="flex items-center list-none"
+      style="margin-left: 60px; gap: 36px;"
+      role="list"
+    >
+      <li><a href="index.html#about"     class="font-body text-base transition-colors hover:text-white" style="color: rgba(255,255,255,0.8);">About</a></li>
+      <li><a href="index.html#mission"   class="font-body text-base transition-colors hover:text-white" style="color: rgba(255,255,255,0.8);">Mission</a></li>
+      <li><a href="index.html#expertise" class="font-body text-base transition-colors hover:text-white" style="color: rgba(255,255,255,0.8);">Expertise</a></li>
+      <li><a href="index.html#insights"  class="font-body text-base transition-colors hover:text-white" style="color: rgba(255,255,255,0.8);">Insights</a></li>
+    </ul>
+
+    <!-- CTA pill — frosted glass -->
+    <a
+      href="index.html#contact"
+      class="inline-flex items-center font-body transition-colors hover:bg-white/25"
+      style="
+        margin-left: auto;
+        padding: 8px 16px;
+        border-radius: 60px;
+        border: 1px solid rgba(255,255,255,1);
+        background: rgba(255,255,255,0.15);
+        font-size: 16px;
+        color: rgba(255,255,255,0.8);
+      "
+    >
+      Get in touch
+    </a>
+  </nav>
+
+  <!-- ─── Hero copy ─── -->
+  <div
+    class="absolute"
+    style="left: 60px; top: 199px; max-width: 560px;"
+  >
+    <!-- Display headline — 80px Fraunces -->
+    <h1
+      class="font-display font-normal text-white"
+      style="font-size: 80px; line-height: 1.2; letter-spacing: -0.015em;"
+    >
+      Yielding a<br>
+      <em class="not-italic" style="color: #C79841; font-style: italic;">fruitful harvest</em><br>
+      for your brand
+    </h1>
+
+    <!-- Subheading — DM Sans 24px -->
+    <p
+      class="font-body font-normal"
+      style="
+        margin-top: 2.5rem;
+        font-size: 24px;
+        line-height: 1.4;
+        color: rgba(255,255,255,0.8);
+        max-width: 518px;
+      "
+    >
+      High-yield strategies and solutions for trademarks and designs—built on a foundation of excellence, integrity, and purpose.
+    </p>
+
+    <!-- Primary CTA — gold pill, Inter 20px uppercase -->
+    <a
+      href="index.html#contact"
+      class="inline-flex items-center gap-2 font-ui font-semibold uppercase transition-opacity hover:opacity-90 active:scale-[0.98]"
+      style="
+        margin-top: 2.5rem;
+        padding: 16px 36px;
+        background: #F6C053;
+        color: #303F31;
+        border-radius: 100px;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+      "
+    >
+      Start your journey
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — ABOUT
+     1440 × 583 px, cream background
+═══════════════════════════════════════════════ -->
+<section
+  id="about"
+  class="relative w-full overflow-hidden"
+  style="background: #FBF9F5; min-height: 583px;"
+>
+  <div
+    class="relative mx-auto"
+    style="max-width: 1440px; padding: 80px 60px;"
+  >
+
+    <!-- Two-column layout: text left, cards right -->
+    <div class="flex items-start gap-16">
+
+      <!-- ─── Left column: text ─── -->
+      <div style="flex: 0 0 518px; max-width: 518px;">
+
+        <!-- Label -->
+        <p
+          class="font-ui font-normal uppercase tracking-widest"
+          style="font-size: 11px; color: #6C5E53; letter-spacing: 0.2em; margin-bottom: 0.75rem;"
+        >
+          Who We Are
+        </p>
+
+        <!-- Main heading — Fraunces 56px -->
+        <h2
+          class="font-display font-normal"
+          style="font-size: 56px; line-height: 1.2; letter-spacing: -0.015em; color: #2C3E2D;"
+        >
+          A trademark<br>consultancy rooted<br>
+          <em class="not-italic" style="font-style: italic; color: #C79841;">in purpose</em>
+        </h2>
+
+        <!-- Body copy — DM Sans 18px -->
+        <p
+          class="font-body font-normal"
+          style="
+            margin-top: 2rem;
+            font-size: 18px;
+            line-height: 1.75;
+            color: #6C5E53;
+          "
+        >
+          Yield IP LLP is a dedicated trademark consultancy firm delivering high-yield strategies and solutions for trademarks and designs. Our name embodies a dual essence: surrendering all we do to God, while yielding fruitful, impactful results for our clients.
+        </p>
+
+      </div>
+
+      <!-- ─── Right column: 2 × 2 feature cards ─── -->
+      <div
+        class="grid grid-cols-2 flex-1"
+        style="gap: 16px;"
+      >
+
+        <!-- Card 1 — Dedicated Focus -->
+        <div
+          class="flex flex-col overflow-hidden bg-white"
+          style="border-radius: 24px; border: 1px solid #EEEEE5; min-height: 200px;"
+        >
+          <!-- Illustration area -->
+          <div class="flex items-center justify-center" style="height: 112px; padding: 16px;">
+            <img src="illus-focus.svg" alt="" aria-hidden="true" style="height: 80px; object-fit: contain;">
+          </div>
+          <!-- Text -->
+          <div style="padding: 0 16px 16px;">
+            <h4
+              class="font-display font-normal"
+              style="font-size: 16px; line-height: 1.2; color: #2C3E2D;"
+            >Dedicated Focus</h4>
+            <p
+              class="font-display font-normal"
+              style="margin-top: 6px; font-size: 12px; line-height: 1.5; color: #6C5E53;"
+            >Exclusively focused on trademark and design IP solutions for optimal results.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 — Global Network -->
+        <div
+          class="flex flex-col overflow-hidden bg-white"
+          style="border-radius: 24px; border: 1px solid #EEEEE5; min-height: 200px;"
+        >
+          <div class="flex items-center justify-center" style="height: 112px; padding: 16px;">
+            <img src="illus-network.svg" alt="" aria-hidden="true" style="height: 80px; object-fit: contain;">
+          </div>
+          <div style="padding: 0 16px 16px;">
+            <h4
+              class="font-display font-normal"
+              style="font-size: 16px; line-height: 1.2; color: #2C3E2D;"
+            >Global Network</h4>
+            <p
+              class="font-display font-normal"
+              style="margin-top: 6px; font-size: 12px; line-height: 1.5; color: #6C5E53;"
+            >Worldwide associates enabling comprehensive portfolio management.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 — Excellence Driven -->
+        <div
+          class="flex flex-col overflow-hidden bg-white"
+          style="border-radius: 24px; border: 1px solid #EEEEE5; min-height: 200px;"
+        >
+          <div class="flex items-center justify-center" style="height: 112px; padding: 16px;">
+            <img src="illus-excellence.svg" alt="" aria-hidden="true" style="height: 80px; object-fit: contain;">
+          </div>
+          <div style="padding: 0 16px 16px;">
+            <h4
+              class="font-display font-normal"
+              style="font-size: 16px; line-height: 1.2; color: #2C3E2D;"
+            >Excellence Driven</h4>
+            <p
+              class="font-display font-normal"
+              style="margin-top: 6px; font-size: 12px; line-height: 1.5; color: #6C5E53;"
+            >Committed to simplifying the complexities of intellectual property protection.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 — MNC & SME Partners -->
+        <div
+          class="flex flex-col overflow-hidden bg-white"
+          style="border-radius: 24px; border: 1px solid #EEEEE5; min-height: 200px;"
+        >
+          <div class="flex items-center justify-center" style="height: 112px; padding: 16px;">
+            <img src="illus-partners.svg" alt="" aria-hidden="true" style="height: 80px; object-fit: contain;">
+          </div>
+          <div style="padding: 0 16px 16px;">
+            <h4
+              class="font-display font-normal"
+              style="font-size: 16px; line-height: 1.2; color: #2C3E2D;"
+            >MNC &amp; SME Partners</h4>
+            <p
+              class="font-display font-normal"
+              style="margin-top: 6px; font-size: 12px; line-height: 1.5; color: #6C5E53;"
+            >Serving multinational corporations and small-to-medium enterprises alike.</p>
+          </div>
+        </div>
+
+      </div><!-- /cards grid -->
+
+    </div><!-- /two-column -->
+
+  </div>
+</section>
+
+</body>
+</html>
