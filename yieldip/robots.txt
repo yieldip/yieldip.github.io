@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /article-7-reasons-old.html
+
+Sitemap: https://yieldip.com/sitemap.xml
