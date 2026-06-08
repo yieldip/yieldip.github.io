@@ -100,47 +100,57 @@
 
   /* ── Mobile responsive ── */
   @media (max-width: 768px) {
-    #hero { height: auto !important; min-height: 100svh; }
+    /* Full-screen hero so photo fills the viewport */
+    #hero { height: 100svh !important; min-height: 560px; }
 
+    /* Image covers full hero, anchored to top so face stays visible */
     .hero-bg-img {
       width: 100% !important;
-      height: 50% !important;
-      top: auto !important;
-      bottom: 0 !important;
+      height: 100% !important;
+      top: 0 !important;
+      bottom: auto !important;
       left: 0 !important;
       right: 0 !important;
+      object-position: top center !important;
     }
 
+    /* Gradient rises from bottom — text area is readable, face is clear */
     .hero-gradient {
-      background: linear-gradient(to bottom,
-        #303D2F 45%,
-        #303D2Fdd 60%,
-        #303D2F99 75%,
-        transparent 100%
+      background: linear-gradient(to top,
+        #303D2F 38%,
+        #303D2Fe0 52%,
+        #303D2F88 66%,
+        transparent 82%
       ) !important;
     }
 
+    /* Nav: tighter margins, hide nav links */
     .hero-nav {
-      top: 20px !important;
+      top: 24px !important;
       left: 24px !important;
       right: 24px !important;
-      flex-wrap: wrap;
-      gap: 12px;
     }
-
     .nav-links-list { display: none !important; }
 
+    /* Copy anchored to bottom of hero */
     .hero-copy {
-      position: relative !important;
-      left: auto !important;
+      left: 24px !important;
+      right: 24px !important;
       top: auto !important;
-      padding: 100px 24px 60px !important;
+      bottom: 48px !important;
       max-width: 100% !important;
     }
 
-    .hero-h1 { font-size: 48px !important; }
-    .hero-sub { font-size: 17px !important; }
+    .hero-h1  { font-size: 44px !important; }
+    .hero-sub { font-size: 16px !important; max-width: 100% !important; }
 
+    /* CTA: auto-width (not stretched), slightly smaller padding */
+    .hero-cta {
+      padding: 14px 28px !important;
+      font-size: 14px !important;
+    }
+
+    /* About section */
     .about-inner { padding: 60px 24px !important; }
     .about-cols  { flex-direction: column !important; gap: 40px !important; }
     .about-text  { flex: none !important; max-width: 100% !important; }
@@ -149,7 +159,7 @@
   }
 
   @media (max-width: 480px) {
-    .hero-h1 { font-size: 38px !important; }
+    .hero-h1    { font-size: 36px !important; }
     .cards-grid { grid-template-columns: 1fr !important; }
   }
 
