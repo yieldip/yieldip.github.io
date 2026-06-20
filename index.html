@@ -263,6 +263,7 @@ section { padding: var(--section-y) var(--section-x); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: #B5A998; }
 .form-submit { width: 100%; padding: 0.95rem; background: var(--c-green); color: #fff; font-family: var(--f-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 11px; cursor: pointer; transition: all 0.4s var(--ease); margin-top: var(--s-1); }
 .form-submit:hover { background: var(--c-green-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(42,59,43,0.2); }
+.hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
 .snackbar { position: fixed; bottom: -120px; left: 50%; transform: translateX(-50%); background: var(--c-green); color: #fff; font-family: var(--f-body); font-size: 0.9rem; padding: 0.9rem 1.8rem; border-radius: var(--r-pill); box-shadow: 0 8px 30px rgba(0,0,0,0.15); z-index: 10000; transition: bottom 0.5s var(--ease); max-width: calc(100% - 1rem); text-align: center; }
 .snackbar.show { bottom: 2rem; }
 
@@ -500,6 +501,11 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
           <label for="message">Your Message *</label>
           <textarea id="message" name="entry.326191174" placeholder="Tell us about your trademark needs..." required></textarea>
         </div>
+        <!-- Honeypot — off-screen, invisible to humans, bots auto-fill it -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+        </div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
 
@@ -524,7 +530,14 @@ const links = document.getElementById('navLinks');
 function toggleNav() { links.classList.toggle('open'); toggle.classList.toggle('open'); document.body.style.overflow = links.classList.contains('open') ? 'hidden' : ''; }
 toggle.addEventListener('click', toggleNav);
 document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { if (links.classList.contains('open')) toggleNav(); }); });
+const _formLoadTime = Date.now();
 function handleSubmit(e) {
+  // Honeypot check — bots fill this, humans never see it
+  const hp = document.getElementById('website');
+  if (hp && hp.value.trim() !== '') return;
+  // Time gate — bots submit instantly, humans take at least a few seconds
+  if (Date.now() - _formLoadTime < 3000) return;
+
   const btn = e.target.querySelector('.form-submit');
   btn.textContent = 'Sending...';
   const snackbar = document.getElementById('snackbar');
