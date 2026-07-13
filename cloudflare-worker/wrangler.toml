@@ -1,0 +1,8 @@
+name = "yieldip-contact-proxy"
+main = "worker.js"
+compatibility_date = "2026-06-01"
+
+# After deploying, set the secret with:
+#   wrangler secret put TURNSTILE_SECRET_KEY
+# Paste the Secret Key from the Cloudflare Turnstile dashboard when prompted.
+# Never commit the secret key itself to this file or the repo.

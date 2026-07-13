@@ -322,6 +322,7 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
   .nav-logo-text { font-size: 1.2rem; }
 }
 </style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -458,32 +459,30 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
         <p class="reveal reveal-d3">Yield IP LLP serves clients globally with a network of trusted associates across multiple jurisdictions.</p>
       </div>
       <form class="contact-form reveal reveal-d2"
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScMDvABiHF0w8nQo7U9MOuAJs25ZUHTICmkjEvzZoR1ue-H7g/formResponse"
-        method="POST"
-        target="hidden_iframe"
+        id="contactForm"
         onsubmit="handleSubmit(event)">
 
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="entry.559885826" placeholder="John" required>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required>
           </div>
           <div class="form-group">
             <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="entry.2129925112" placeholder="Doe" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address *</label>
-          <input type="email" id="email" name="entry.2021414221" placeholder="john@company.com" required>
+          <input type="email" id="email" name="email" placeholder="john@company.com" required>
         </div>
         <div class="form-group">
           <label for="company">Company Name</label>
-          <input type="text" id="company" name="entry.1682581518" placeholder="Your Company">
+          <input type="text" id="company" name="company" placeholder="Your Company">
         </div>
         <div class="form-group">
           <label for="service">Service of Interest *</label>
-          <select id="service" name="entry.1514591211" required>
+          <select id="service" name="service" required>
             <option value="" disabled selected>Select a service</option>
             <option value="Pre-filling searches">Pre-Filing Searches</option>
             <option value="Trademark &amp; Design Filing">Trademark &amp; Design Filing</option>
@@ -499,17 +498,17 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
         </div>
         <div class="form-group">
           <label for="message">Your Message *</label>
-          <textarea id="message" name="entry.326191174" placeholder="Tell us about your trademark needs..." required></textarea>
+          <textarea id="message" name="message" placeholder="Tell us about your trademark needs..." required></textarea>
         </div>
         <!-- Honeypot — off-screen, invisible to humans, bots auto-fill it -->
         <div class="hp-field" aria-hidden="true">
           <label for="website">Leave this empty</label>
           <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
         </div>
+        <!-- Cloudflare Turnstile — replace with your Site Key, see cloudflare-worker/README.md -->
+        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" style="margin: 0.5rem 0 1rem;"></div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
-
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
   </div>
 </section>
@@ -530,23 +529,41 @@ const links = document.getElementById('navLinks');
 function toggleNav() { links.classList.toggle('open'); toggle.classList.toggle('open'); document.body.style.overflow = links.classList.contains('open') ? 'hidden' : ''; }
 toggle.addEventListener('click', toggleNav);
 document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { if (links.classList.contains('open')) toggleNav(); }); });
+// Replace with your deployed Worker URL — see cloudflare-worker/README.md
+const CONTACT_PROXY_URL = 'YOUR_WORKER_URL';
+
 const _formLoadTime = Date.now();
 function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+
   // Honeypot check — bots fill this, humans never see it
   const hp = document.getElementById('website');
   if (hp && hp.value.trim() !== '') return;
   // Time gate — bots submit instantly, humans take at least a few seconds
   if (Date.now() - _formLoadTime < 3000) return;
 
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Sending...';
+  const btn = form.querySelector('.form-submit');
   const snackbar = document.getElementById('snackbar');
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    e.target.reset();
-    snackbar.classList.add('show');
-    setTimeout(() => { snackbar.classList.remove('show'); }, 4000);
-  }, 1000);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch(CONTACT_PROXY_URL, { method: 'POST', body: new FormData(form) })
+    .then(res => {
+      if (!res.ok) throw new Error('submit failed');
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      form.reset();
+      if (window.turnstile) turnstile.reset();
+      snackbar.classList.add('show');
+      setTimeout(() => { snackbar.classList.remove('show'); }, 4000);
+    })
+    .catch(() => {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      if (window.turnstile) turnstile.reset();
+      alert('Something went wrong sending your message. Please try again or email us directly.');
+    });
 }
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 
