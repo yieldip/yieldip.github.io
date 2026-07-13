@@ -505,8 +505,7 @@ footer p { font-size: 0.76rem; color: rgba(250,246,240,0.35); }
           <label for="website">Leave this empty</label>
           <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
         </div>
-        <!-- Cloudflare Turnstile — replace with your Site Key, see cloudflare-worker/README.md -->
-        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" style="margin: 0.5rem 0 1rem;"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAD1Csl4nT_GlzEgE" style="margin: 0.5rem 0 1rem;"></div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
     </div>
@@ -529,8 +528,7 @@ const links = document.getElementById('navLinks');
 function toggleNav() { links.classList.toggle('open'); toggle.classList.toggle('open'); document.body.style.overflow = links.classList.contains('open') ? 'hidden' : ''; }
 toggle.addEventListener('click', toggleNav);
 document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { if (links.classList.contains('open')) toggleNav(); }); });
-// Replace with your deployed Worker URL — see cloudflare-worker/README.md
-const CONTACT_PROXY_URL = 'YOUR_WORKER_URL';
+const CONTACT_PROXY_URL = 'https://yieldip-contact-proxy.yieldip.workers.dev/';
 
 const _formLoadTime = Date.now();
 function handleSubmit(e) {
